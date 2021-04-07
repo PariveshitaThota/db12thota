@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  h1= title
+    div(class="container-fluid")
+        div(class="row")
+            -
+                let flower = [
+                    {
+                        "type": "Lavender",
+                        "colour": "Lavender",
+                        "cost":  800
+                    },
+                    {
+                        "type": "Daffodil",
+                        "colour": "yellow",
+                        "cost": 900
+                    },
+                    {
+                        "type": "Bellflowers",
+                        "colour": "Blue",
+                        "cost": 500
+                    },                    
+                ]
+            each list,index in flower
+                div(class="col-sm-2" onclick=`buy(${index})`) #{list.type}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{list.colour}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{list.cost}
+                 
+        script.
+     
+             function buy(itemNo)
+             {
+             alert(`You purchased Item ${itemNo+1}`)
+             }
