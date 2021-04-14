@@ -10,7 +10,7 @@ var usersRouter = require('./routes/users');
 var flowerRouter = require('./routes/flower');
 var starsRouter = require('./routes/stars');
 var slotRouter = require('./routes/slot');
-var resRouter = require('./routes/resource');
+var resourceRouter = require('./routes/resource');
 var app = express();
 
 // view engine setup
@@ -29,7 +29,7 @@ app.use('/users', usersRouter);
 app.use('/flower', flowerRouter);
 app.use('/stars', starsRouter);
 app.use('/slot', slotRouter);
-app.use('/resource',resRouter)
+app.use('/resource',resourceRouter)
 const connectionString = process.env.MONGO_CON
 mongoose = require('mongoose');
 mongoose.connect(connectionString,

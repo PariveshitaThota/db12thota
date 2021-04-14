@@ -1,0 +1,50 @@
+extends layout
+
+block content
+    h1= title
+
+    - let flowerid   = toShow._id
+    - let flowertype  = toShow.type
+    - let flowercolor  = toShow.colour
+    - let flowercost = toShow.cost
+
+    div
+        div.row
+            div(class='costumeAttr mr-4') Flower ID is:
+            div(id="flowerid") #{flowerid}
+        div.row
+            div(class='costumeAttr mr-4') Flower Type is:
+            div #{flowertype}
+        div.row
+            div(class='costumeAttr mr-4') Flower Color is:
+            div #{flowercolor}
+        div.row
+            div(class='costumeAttr mr-4') Flower Cost  is:
+            div #{flowercost}
+
+        button(class='btn btn-danger btn-md m-auto'  type="Submit" onclick=`deleteflower()`) Delete
+        button(class="btn btn-secondary m-2" onclick="cancel()") Cancel  
+    
+    script.
+        function cancel() {   
+            // Go back to the home page for the costume collection     
+            window.location.href='/flower'   
+        }
+
+    script.
+        function deleteflower() {
+            let value=document.getElementById("flowerid").innerHTML;
+            console.log(value)
+            // TODO do something here to show user that form is being submitted
+            fetch('/resource/flower/' + value, {
+                method: 'DELETE'
+            }).then((resp) => {
+                return resp.json(); // or resp.text() or whatever the server sends
+            }).then((body) => {
+                alert("Delete succeded")
+                 // TODO handle body
+            }).catch((error) => {
+                // TODO handle error
+                alert("Delete failed " + error )
+            });
+        };
