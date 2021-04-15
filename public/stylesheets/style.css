@@ -8,6 +8,28 @@ a {
 }
 
 .costumeAttr {
-  background-color: aquamarine;
-  width: 120px;
+  background-color: rgb(50, 42, 165);
+  width: 160px;
+  margin: 5px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  padding: 9px;
+  border-radius: 8px;
+  font-weight: bolder;
+}
+
+.value{
+  margin-right: 3px;
+  margin-bottom: 0;
+  padding: 10px;
+  justify-content:center;
+  font-weight: bold;
+  border-bottom: 2px solid rgb(224, 19, 70);
+  border-left: 2px solid  rgb(224, 19, 19);
+  background-color: rgb(151, 196, 196);
+  border-radius: 2px;
+}
+.specialstyles{
+    border-top: 2px solid rgb(0, 255, 213);
+    width: 70%;
 }

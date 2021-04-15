@@ -1,7 +1,10 @@
 extends layout
 
 block content
-  h1= title
+  h1(id="newtitle")= title
+
+  if (toShow == null)
+    h3 No instance to delete
 
   - let flowerid = toShow._id
   - let flowertype = toShow.type
@@ -11,14 +14,14 @@ block content
   div
     div.row
       div(class='costumeAttr mr-3') flower ID is:
-      div #{flowerid}
+      div(class='value specialstyles') #{flowerid}
     div.row
       div(class='costumeAttr mr-3') flower Type is:
-      div #{flowertype}
+      div(class="values") #{flowertype}
     div.row
       div(class='costumeAttr mr-3') flower colour is:
-      div #{flowercolour}
+      div(class="values") #{flowercolour}
     div.row
       div(class='costumeAttr mr-3') flower cost is:
-      div #{flowercost}
+      div(class="values") #{flowercost}
     
