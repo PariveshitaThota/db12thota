@@ -42,12 +42,13 @@ console.log("Connection to DB succeeded");});
 async function recreateDB(){
   // Delete everything
   await Flower.deleteMany();
-  let instance1 = new Flower({type:"Lavender", colour:"lavender",
+
+  let instance1 = new Flower({type:"Lavender",colour:"lavender",
   cost:25.0});
-  let instance2 = new Flower({type:"Rose", colour:"Pink",
-  cost: 25.3});
-  let instance3 = new Flower({type:"Daffodil", colour:"yellow",
-  cost: 25.2});
+  let instance2 = new Flower({type:"Rose",colour:"Pink",
+  cost:25.3});
+  let instance3 = new Flower({type:"Daffodil",colour:"yellow",
+  cost:25.2});
   instance1.save( function(err,doc) {
   if(err) return console.error(err);
   console.log("First object saved")

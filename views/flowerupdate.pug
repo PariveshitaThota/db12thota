@@ -16,14 +16,15 @@ block content
   - let actionid = "/resource/flower/" + flowerid
   form(id='flowerForm', action= actionid, method="PUT")
     div.form-group
-        label.costumeAttr(for='flowertype') flowertype
-        input#flowertype(type='text', name='flowertype')
+        label.costumeAttr(for='type') flowertype
+        input
+        #flowertype(type='text', name='type', value= type )
     div.form-group
-        label.costumeAttr(for='flowercolour') flowercolour
-        input#flowercolour(type='text', name='flowercolour')
+        label.costumeAttr(for='colour') flowercolour
+        input#flowercolour(type='text', name='colour', value= colour )
     div.form-group
-        label.costumeAttr(for='flowercost') flowercost
-        input#flowercost(type='text', name='flowercost')
+        label.costumeAttr(for='cost') flowercost
+        input#flowercost(type='text', name='cost', value= cost )
     input(type="submit")
 
   script.
