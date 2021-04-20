@@ -3,9 +3,9 @@ var router = express.Router();
 
 const flower_controlers = require('../controllers/flower');
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('flower', { title: 'Search Results flower' });
-});
+// router.get('/', function(req, res, next) {
+//   res.render('flower', { title: 'Search Results flower' });
+// });
 router.get('/', flower_controlers.flower_view_all_Page);
 
 module.exports = router;
