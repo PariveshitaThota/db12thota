@@ -6,7 +6,7 @@ var flower_controller = require('../controllers/flower');
 /// API ROUTE ///
 // GET resources base.
 router.get('/', api_controller.api);
-/// flower ROUTES ///
+/// flower ROUTES //
 // POST request for creating a flower.
 router.post('/flower', flower_controller.flower_create_post);
 // DELETE request to delete flower.
