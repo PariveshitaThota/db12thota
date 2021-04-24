@@ -1,7 +1,10 @@
 const mongoose = require("mongoose")
 const flowerSchema = mongoose.Schema({
 type: String,
-colour: String,
+colour: {
+    type: String,
+    minimumLength: 10
+},
 cost: {
     type: Number,
 
