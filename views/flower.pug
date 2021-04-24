@@ -1,18 +1,24 @@
 extends layout
 
 block content
+ - let create = `dispatch(\"flower/create\")`
+  button.btn(class="btn-success m1-1", onclick=create) Create
   h1= title
-    - let flower=results;
-    - console.log(flower)
-    div(class="container-fluid mt-3")
-    div(class="row m-1")
-      each form in flower
-       - let destination=`buy(\"/flower/update?id=${form._id}\")`
-       div(class="col-sm-6 m-1 p-3") Flower #{form.type} - #{form.colour} - #{form.cost}
-        button.btn( class="btn-primary ml-2", onclick=destination ) Update
+  - let flower=results;
+  div(class="container-fluid mt-3")
+   div(class="row m-1")
+    each form in flower
+     - let destination=`buy(\"/flower/update?id=${form._id}\")`
+     - let detail=`buy(\"/flower/detail?id=${form._id}\")`
+     - let del=`buy(\"/flower/delete?id=${form._id}\")`
+     div(class="col-sm-6 bg-warning m-1 p-3") flower #{form.type} - #{form.colour} - #{form.cost}
+      button.btn( class="btn-primary ml-2", onclick=destination ) Update
+      button.btn( class="btn-dark ml-2", onclick=detail ) Get Detail
+      button.btn( class="btn-danger ml-2", onclick=del ) Delete
+  
+   script.
+    function buy(path){
+        window.location.href=path
 
-    script.
-      function buy(path){
-        window.location.href=path;
+        //alert(`You purchased Item ${a+1}`)
       }
-
